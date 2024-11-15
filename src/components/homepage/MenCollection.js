@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  } from "@fortawesome/free-solid-svg-icons";
 
-const MenCollection = ({triggerRef}) => {
+const MenCollection = () => {
   return (
-    <div className='collection' ref={triggerRef}>
+    <div className='collection' >
         <div className='collectionTitle'>
             <span>MEN</span>
             <span>COLLECTION</span>

@@ -1,6 +1,7 @@
 import Hero from "./Hero"
 import React, { useEffect, useRef, useState } from 'react';
 import MenCollection from "./MenCollection"
+import FemaleCollection from "./FemaleCollection";
 const Homepage = () => {
     const [isInView, setIsInView] = useState(false);
     const triggerRef = useRef(null);
@@ -8,7 +9,7 @@ const Homepage = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(
         ([entry]) => setIsInView(entry.isIntersecting),
-        { threshold: 0.5 }
+        { threshold: 0.2 }
         );
 
     if (triggerRef.current) observer.observe(triggerRef.current);
@@ -18,7 +19,10 @@ const Homepage = () => {
   return (
     <div className={`homepage ${isInView ? 'scrolled' : ''}`}>
         <Hero />
-        <MenCollection triggerRef={triggerRef} />
+        <div className="CollectionContainer" ref={triggerRef} >
+          <MenCollection  />
+          <FemaleCollection />
+        </div>
     </div>
   )
 }

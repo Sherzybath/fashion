@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faForward, faCaretRight } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 const hero = () => {
   return (
     <div className='hero' >
@@ -15,9 +15,12 @@ const hero = () => {
                   <p>Bored of your closet? Borrow from ours.
                    Blah blah is the premier destination for renting designer fashion.
                   </p>
-                  <button>
+                  <Link to="/dashboard">
+                  <button href='/dashboard'>
                     <span>See our collection</span><FontAwesomeIcon icon={faCaretRight} />
                   </button>
+                  </Link>
+                  
                 </div>
             </div>
             <div className='imageDay'>
