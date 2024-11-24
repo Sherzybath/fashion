@@ -19,8 +19,7 @@ const BlogPost = ({
     <div className="post2" onClick={() => onClick(id)}>
       <img src={display} alt={`${gender} ${clothing}`} className="post-image" />
       <div className="Description">
-        <span>{name}</span><span>{price}</span>
-        
+        <span>{name}</span><span>${price}</span>
       </div>
       {/* <div className="basic">
         <span className="description">

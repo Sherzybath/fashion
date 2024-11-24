@@ -2,6 +2,7 @@ import Hero from "./Hero"
 import React, { useEffect, useRef, useState } from 'react';
 import MenCollection from "./MenCollection"
 import FemaleCollection from "./FemaleCollection";
+import Nav from "./Nav";
 const Homepage = () => {
     const [isInView, setIsInView] = useState(false);
     const triggerRef = useRef(null);
@@ -18,6 +19,7 @@ const Homepage = () => {
   }, []);
   return (
     <div className={`homepage ${isInView ? 'scrolled' : ''}`}>
+        <Nav />
         <Hero />
         <div className="CollectionContainer" ref={triggerRef} >
           <MenCollection  />

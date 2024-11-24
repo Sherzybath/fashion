@@ -464,6 +464,16 @@ input[type="radio"] {
   font-size: 1.5vw;
   margin-right: 0.9vw;
 }
+.nav .right button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+.homepage.scrolled .nav .right button{
+  color: #ececec;
+}
 .nav img{
   height: 10vh;
 }
@@ -565,6 +575,8 @@ flex-direction: row;
 /* DRAG DISPLAY */
 /* DRAG DISPLAY */
 .scrollDisplay{
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
   background-color: #2c2c2c;
   padding-top: 4vw;
 }
@@ -614,12 +626,11 @@ flex-direction: row;
     transition: 0.3s ease-in-out;
 }
 .skill .dragDesc span{
-  font-size: 1vw;
-  padding-left: 0.9vw;
-}
-.skill .dragDesc span:nth-child(1){
+  font-size: 0.9vw;
+  padding-left: 0.5vw;
   font-weight: 100;
 }
+
 
 .skill .dragDesc{
   display: flex;
@@ -633,24 +644,413 @@ flex-direction: row;
   background-color: #000;
 }
 
-.drag-circle {
+/* STORE DISPLAY */
+/* STORE DISPLAY */
+/* STORE DISPLAY */
+.storeDisplay{
+  background-color: #2c2c2c;
+  padding-top: 40vh;
+  transition: background-color 0.3s ease-in-out;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  gap: 1vw;
+  justify-content: space-between;
+}
+.storeDisplay.scrolled{
+  background-color: #ececec;
+}
+.storeDisplay .storeImage{
+  max-width: 35vw;
+  max-height: 80vh;
+
+}
+.storeDisplay .storeImage img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.storeDisplay .storeDetails{
+  padding: 0vw 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 80vh;
+  max-width: 40vw;
 }
 
-.circle {
-  width: 100px;
-  height: 100px;
-  background-color: rgba(0, 150, 255, 0.5);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.storeDisplay .storeDetails .storeTextSections span{
+  font-size: 3vw;
+  font-weight: 600;
+  color: #ececec;
+  font-family: grotesk;
 }
 
-.drag-text {
-  color: white;
-  font-size: 16px;
+.storeDisplay .storeDetails .storeTextSections p{
+  font-size: 1.5vw;
+  font-weight: 300;
+  color: #ececec;
+  font-family: grotesk;
+}
+.storeDisplay.scrolled .storeDetails .storeTextSections p,.storeDisplay.scrolled .storeDetails .storeTextSections span{
+  color: #000;
+}
+.storeDisplay .storeDetails .storeTextSections:nth-child(3){
+  padding-bottom: 33vh;
+}
+
+
+/* FOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+/* FOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+/* FOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+.Forms{
+  padding: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.Forms .Flip{
+  font-size: 1vw;
+  height: 3vw;
+  padding: 0vw 2vw;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: #000 solid 2px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.Forms .Flip:hover{
+  background-color: #000;
+  color: #ececec;
+} 
+.Forms h1{
+  font-family: grotesk;
+}
+.Forms .Input{
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 3vw;
+}
+.Forms .Input input{
+  font-family: grotesk;
+  padding: 0.7vw;
+  border: none;
+  width: 30vw;
+  font-size: 0.9vw;
+  border-bottom: 1px solid #000;
+}
+.Forms .Input input:focus{
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+.Forms .Input button{
+  font-family: grotesk;
+  padding: 0.7vw;
+  border: none;
+  width: 20vw;
+  font-size: 0.9vw;
+  background-color: #000;
+  color: #ececec;
+  cursor: pointer;
+}
+
+
+/* MAAAAAAAAAAAAAANNNNNNNNNNNNNNAAAAAAAAAAAAAGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+/* MAAAAAAAAAAAAAANNNNNNNNNNNNNNAAAAAAAAAAAAAGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+/* MAAAAAAAAAAAAAANNNNNNNNNNNNNNAAAAAAAAAAAAAGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+
+.Management{
+  margin-top: 5vh;
+  padding: 3vw 3vw;
+}
+.Management *{
+  font-family: grotesk;
+}
+.addDetails *{
+  font-family: grotesk;
+}
+.Management .addDetails input{
+  font-family: grotesk;
+  padding: 0.7vw;
+  border: none;
+  width: 30vw;
+  font-size: 0.9vw;
+  border-bottom: 1px solid #000;
+}
+.Management .addDetails input:focus{
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+.Management .addDetails h1{
+  margin-bottom: 2vw;
+}
+.Management .addDisplay{
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.addDetails button{
+  font-family: grotesk;
+  padding: 0.7vw;
+  border: none;
+  width: 20vw;
+  font-size: 0.9vw;
+  background-color: #000;
+  color: #ececec;
+  cursor: pointer;
+}
+
+.addDetails{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  justify-content: center;
+}
+
+/* GENDER */
+/* GENDER */
+/* GENDER */
+.gender-selector {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-label {
+  margin-left: 8px;
   font-weight: bold;
+  color: #585858;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.gender-selector   input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-container input[type="radio"]:checked + .radio-label {
+  color: #000;
+  border-bottom: 1px #000 solid;
+}
+
+/* COLLECTION */
+/* COLLECTION */
+/* COLLECTION */
+.collection-selector {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-label {
+  margin-left: 8px;
+  font-weight: bold;
+  color: #585858;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.collection-selector input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-container input[type="radio"]:checked + .radio-label {
+  color: #000;
+  border-bottom: 1px #000 solid;
+}
+
+/* SIZES */
+/* SIZES */
+/* SIZES */
+
+.addDetails .size-selector-container {
+  font-family: Arial, sans-serif;
+  width: 10vw;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  justify-content: space-around;
+  justify-items: center;
+
+}
+
+.size-selector-container h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+  
+}
+
+.size-selector-container .sizeCheck {
+  cursor: pointer;
+  color: #585858;
+  width: 1vw;
+}
+
+.size-selector-container input[type="checkbox"] {
+  width: 2vw;
+  cursor: pointer;
+  transform: scale(0.67);
+  display: none;
+}
+.size-selector-container input[type="checkbox"]:checked + .sizeCheck {
+  color: #000;
+  text-decoration: underline;
+}
+.addDetails .addCheck{
+  display: flex;
+  flex-direction: row;
+}
+
+.addDetails .addBox{
+  margin-top: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+/* DISPLAY */
+/* DISPLAY */
+/* DISPLAY */
+#fileClick{
+  color: #ececec;
+  width: 5vw;
+}
+/* PREVIEW */
+/* PREVIEW */
+/* PREVIEW */
+.Basic{
+  max-width: 23vw;
+  min-width: 23vw;
+  min-height: 70vh;
+  max-height: 70vh;
+  background-color: #000;
+}
+.Preview{
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vw;
+}
+.Preview *{
+  font-family: grotesk;
+}
+.Basic img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.addPreview h1{
+  font-family: grotesk;
+  margin-bottom: 1vw;
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  align-items: center;
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  left: 0;
+  z-index: 1000; 
+  justify-content: space-between;
+}
+.nav .right{
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  font-size: 1.5vw;
+  margin-right: 0.9vw;
+}
+.nav .right button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+.homepage.scrolled .nav .right button{
+  color: #ececec;
+}
+.nav img{
+  height: 10vh;
+}
+/* .size-span{
+  display: flex;
+  flex-direction: row;
+} */
+/* ADJUST */
+/* ADJUST */
+/* ADJUST */
+
+.clothing-management {
+ margin-top: 10vh;
+  width: 100%;
+}
+
+.clothing-list {
+  list-style: none;
+  padding: 0;
+}
+
+.clothing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box {
+  width: 80px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.delete-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #ff7875;
 }

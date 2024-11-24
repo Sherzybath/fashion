@@ -83,7 +83,7 @@ function DragDisplay({ List }) {
                 <img src={item.display} alt={`Skill ${index}`} />
                 <div className="dragDesc">
                     <span>{item.name}</span>
-                    <span>{item.price}</span>
+                    <span>${item.price}</span>
                 </div>
             
           </div>

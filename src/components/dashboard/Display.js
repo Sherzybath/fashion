@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DragDisplay from "./DragDisplay";
+import Store from "./Store";
 const filterSamples = [
   {
     id: 1,
@@ -12,10 +13,11 @@ const filterSamples = [
     sizes: ["S", "M", "L"],
     collection: "summer",
     clothing: "t-shirts",
-    price: "$40",
+    price: 40,
     display: "/images/menCollection/dailyImg1.jpg",
     vendor: "Fashion Hub",
-    description: "A comfortable and stylish summer T-shirt made from breathable cotton, perfect for warm weather."
+    description: "A comfortable and stylish summer T-shirt made from breathable cotton, perfect for warm weather.",
+    count: 50,
   },
   {
     id: 2,
@@ -25,10 +27,11 @@ const filterSamples = [
     sizes: ["S", "M"],
     collection: "spring",
     clothing: "dresses",
-    price: "$80",
+    price: 80,
     display: "/images/menCollection/dailyImg2.jpg",
     vendor: "Elegant Apparel",
-    description: "A beautiful floral spring dress, featuring lightweight fabric and a flattering fit for casual outings."
+    description: "A beautiful floral spring dress, featuring lightweight fabric and a flattering fit for casual outings.",
+    count: 0,
   },
   {
     id: 3,
@@ -38,10 +41,11 @@ const filterSamples = [
     sizes: ["M", "L", "XL"],
     collection: "fall",
     clothing: "hoodies",
-    price: "$150",
+    price: 150,
     display: "/images/menCollection/dailyMen.jpg",
     vendor: "Cozy Wear",
-    description: "A cozy, oversized hoodie with a soft fleece lining, perfect for chilly fall evenings."
+    description: "A cozy, oversized hoodie with a soft fleece lining, perfect for chilly fall evenings.",
+    count: 30,
   },
   {
     id: 4,
@@ -51,10 +55,11 @@ const filterSamples = [
     sizes: ["M", "L", "XL"],
     collection: "winter",
     clothing: "jackets",
-    price: "$220",
+    price: 220,
     display: "/images/Femalecollection/Daily5.jpg",
     vendor: "Winter Wonders",
-    description: "A durable winter jacket with a water-resistant exterior and warm insulation for extreme cold."
+    description: "A durable winter jacket with a water-resistant exterior and warm insulation for extreme cold.",
+    count: 25,
   },
   {
     id: 5,
@@ -64,10 +69,11 @@ const filterSamples = [
     sizes: ["L", "XL"],
     collection: "winter",
     clothing: "jackets",
-    price: "$220",
+    price: 220,
     display: "/images/Femalecollection/Daily2.jpg",
     vendor: "Winter Wonders",
-    description: "An alternate style of the men's winter jacket with a sleek design and added hood for extra protection."
+    description: "An alternate style of the men's winter jacket with a sleek design and added hood for extra protection.",
+    count: 15,
   },
   {
     id: 6,
@@ -77,10 +83,11 @@ const filterSamples = [
     sizes: ["S", "M", "L"],
     collection: "summer",
     clothing: "skirts",
-    price: "$70",
+    price: 70,
     display: "/images/Femalecollection/Daily1.jpg",
     vendor: "Sunny Styles",
-    description: "A lightweight, flowy summer skirt with vibrant patterns, ideal for beach days and casual wear."
+    description: "A lightweight, flowy summer skirt with vibrant patterns, ideal for beach days and casual wear.",
+    count: 40,
   },
   {
     id: 7,
@@ -90,10 +97,11 @@ const filterSamples = [
     sizes: ["M", "L"],
     collection: "fall",
     clothing: "sweaters",
-    price: "$130",
+    price: 130,
     display: "/images/Femalecollection/Daily4.jpg",
     vendor: "Autumn Essentials",
-    description: "A cozy knitted sweater with a relaxed fit, perfect for layering during the fall season."
+    description: "A cozy knitted sweater with a relaxed fit, perfect for layering during the fall season.",
+    count: 0,
   },
   {
     id: 8,
@@ -103,10 +111,11 @@ const filterSamples = [
     sizes: ["S", "M"],
     collection: "winter",
     clothing: "coats",
-    price: "$250",
+    price: 250,
     display: "/images/Femalecollection/Daily6.jpg",
     vendor: "Winter Wonders",
-    description: "A premium winter coat designed for warmth and style, featuring a faux fur collar and deep pockets."
+    description: "A premium winter coat designed for warmth and style, featuring a faux fur collar and deep pockets.",
+    count: 20,
   },
   {
     id: 9,
@@ -116,10 +125,11 @@ const filterSamples = [
     sizes: ["S", "M"],
     collection: "spring",
     clothing: "blouses",
-    price: "$55",
+    price: 55,
     display: "/images/Femalecollection/Daily9.jpg",
     vendor: "Elegant Apparel",
-    description: "A chic spring blouse with delicate embroidery and a light, airy fabric for maximum comfort."
+    description: "A chic spring blouse with delicate embroidery and a light, airy fabric for maximum comfort.",
+    count: 35,
   },
   {
     id: 10,
@@ -129,10 +139,11 @@ const filterSamples = [
     sizes: ["M", "L"],
     collection: "summer",
     clothing: "shorts",
-    price: "$65",
+    price: 65,
     display: "/images/Femalecollection/Daily8.jpg",
     vendor: "Sunny Styles",
-    description: "Casual summer shorts with a relaxed fit and breathable material, perfect for hot days."
+    description: "Casual summer shorts with a relaxed fit and breathable material, perfect for hot days.",
+    count: 0,
   },
   {
     id: 11,
@@ -142,10 +153,11 @@ const filterSamples = [
     sizes: ["S", "M", "L"],
     collection: "summer",
     clothing: "shorts",
-    price: "$65",
+    price: 65,
     display: "/images/Femalecollection/Daily10.jpg",
     vendor: "Sunny Styles",
-    description: "Another variant of the summer shorts with a different pattern, offering style and comfort."
+    description: "Another variant of the summer shorts with a different pattern, offering style and comfort.",
+    count: 0,
   },
   {
     id: 12,
@@ -155,10 +167,11 @@ const filterSamples = [
     sizes: ["S", "M"],
     collection: "winter",
     clothing: "coats",
-    price: "$250",
+    price: 250,
     display: "/images/Femalecollection/Daily11.jpg",
     vendor: "Winter Wonders",
-    description: "A stylish winter coat with a tailored fit, designed to keep you warm and fashionable in cold weather."
+    description: "A stylish winter coat with a tailored fit, designed to keep you warm and fashionable in cold weather.",
+    count: 18,
   },
   {
     id: 13,
@@ -168,10 +181,11 @@ const filterSamples = [
     sizes: ["S", "M", "L"],
     collection: "spring",
     clothing: "dresses",
-    price: "$90",
+    price: 90,
     display: "/images/menCollection/dailyImg3.jpg",
     vendor: "Elegant Apparel",
-    description: "A lovely spring dress with a floral print, featuring a fitted waist and a flowing skirt."
+    description: "A lovely spring dress with a floral print, featuring a fitted waist and a flowing skirt.",
+    count: 0,
   },
   {
     id: 14,
@@ -181,12 +195,15 @@ const filterSamples = [
     sizes: ["S", "M", "L"],
     collection: "winter",
     clothing: "coats",
-    price: "$250",
+    price: 250,
     display: "/images/Femalecollection/Daily12.jpg",
     vendor: "Winter Wonders",
-    description: "An elegant winter coat with a double-breasted design, made for both style and warmth."
-  }
+    description: "An elegant winter coat with a double-breasted design, made for both style and warmth.",
+    count: 22,
+  },
 ];
+
+
 
 
 const Display = () => {
@@ -245,6 +262,7 @@ const { id } = useParams();
           <span>Similar Styles</span>
           <DragDisplay List={filterSamples} />
         </div>
+        <Store />
         
     </div>
   )
